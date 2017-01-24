@@ -1,0 +1,631 @@
+html {
+	/* Prevent font scaling in landscape while allowing user zoom */
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: helvetica;
+	font-size: 16px;
+}
+
+header {
+	background: #3f3945;
+	background-image: url("../images/baby.jpg");
+	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	/* would use 100vh, except google bot renders it incorrectly */
+	height: 700px;
+	/* max-height is set for google bot to render page correctly */
+	max-height: 1080px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+ul {
+	padding: 0;
+	text-decoration: none;
+	margin: 0;
+	line-height: 1.5;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a, button {
+	cursor: pointer;
+}
+
+button, input, textarea {
+	outline: none;
+}
+
+.header-nav {
+	font-family: 'Amatic SC', cursive;
+	font-size: 32px;
+	display: flex;
+	flex-direction: row;
+	padding-top: 35px;
+	list-style: none;
+}
+
+.header-nav a {
+	padding: 0 25px;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.header-nav a:hover {
+	color: #e0a6a5;
+}
+
+.header-nav__img {
+	height: 22px;
+	margin: 11px 15px;
+}
+
+.header-logo {
+	height: 425px;
+	margin-right: 25px;
+}
+
+.header__scroll-down-contain {
+	margin: 0 -13px 40px 0;
+	visibility: hidden;
+}
+
+.header__scroll-down {
+	bottom: 5vh;
+	display: block;
+	width: 13px;
+	height: 13px;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: translate(-50%, 0%) rotate(45deg);
+	-moz-transform: translate(-50%, 0%) rotate(45deg);
+	transform: translate(-50%, 0%) rotate(45deg);
+	-webkit-animation: scroll_down 2s ease-in-out infinite;
+	-moz-animation: scroll_down 2s ease-in-out infinite;
+	animation: scroll_down 2s ease-in-out infinite;
+	/* find the scroll_down annimation in the CSS ANNIMATIONS section below*/
+}
+
+.intro, .about, .faq, .testimonials, .resources, .pricing, .contact, footer {
+	padding: 50px;
+	color: #fff;
+}
+
+.intro {
+	background: #6f6977;
+}
+
+.intro__stat {
+	font-family: 'Amatic SC', cursive;
+	font-size: 84px;
+	color: #fff;
+}
+
+.about {
+	background: #ec8d91;
+}
+
+.about__image {
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+}
+
+.about__content {
+	max-width: 650px;
+}
+
+.faq {
+	background: #94a8a9;
+	display: flex;
+    flex-direction: column;
+}
+
+.faq__section {
+	max-width: 450px;
+}
+
+.faq__qa {
+	margin-bottom: 30px;
+}
+
+.faq__q, .faq__a {
+	display: flex;
+}
+
+.faq__q {
+	margin-bottom: 5px;
+}
+
+.faq__letter {
+	font-family: 'Amatic SC', cursive;
+	font-size: 24px;
+	color: #6f6977;
+	flex: 0 0 auto;
+}
+
+.faq__question, .faq__answer {
+	line-height: 1.5;
+	margin-left: 10px;
+	flex: 0 1 auto;
+}
+
+.faq__more-btn {
+	align-self: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    color: #94a8a9;
+    padding: 4px 15px;
+    border-radius: 3px;
+    border: none;
+    background: #fff;
+}
+
+.faq__more-btn:hover {
+    background: #DDD;
+}
+
+.testimonials {
+	background: #a76475;
+}
+
+.testimonial-container {
+	display: flex;
+	max-width: 900px;
+	margin: 10px 0;
+}
+
+.testimonial__image {
+	border-radius: 50%;
+	height: 120px;
+	width: 120px;
+	flex: 120px 0 0;
+	margin: 5px 32px 0 0;
+}
+
+.testimonial__name {
+	font-family: 'Amatic SC', cursive;
+	font-size: 24px;
+	color: #6f3846;
+}
+
+.pricing {
+	background: #6f6977;
+}
+
+.pricing__title {
+	font-family: 'Amatic SC', cursive;
+    font-size: 32px;
+    color: #FFF;
+    margin: 0 0 15px 0;
+}
+
+.pricing__price {
+	font-family: 'Amatic SC', cursive;
+    font-size: 32px;
+    color: #ec8d91;
+}
+
+.pricing__list {
+	text-align: left;
+	margin-top: 15px;
+	background: #76717d;
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
+}
+
+.pricing__list > li {
+	margin-bottom: 10px;
+	line-height: 1.25;
+}
+
+.pricing__link {
+	color: #fff;
+}
+
+.resources {
+	background: #ec8d91;
+}
+
+.resource__link {
+	color: #fff;
+}
+
+.contact {
+	background: #94a8a9;
+}
+
+.contact__form-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	max-width: 900px;
+}
+
+.contact__name {
+	width: 650px;
+	border: none;
+	border-radius: 3px;
+	margin-bottom: 16px;
+	font-size: 16px;
+	padding: 12px;
+}
+
+.contact__email {
+	width: 650px;
+	border: none;
+	border-radius: 3px;
+	margin-bottom: 16px;
+	font-size: 16px;
+	padding: 12px;
+}
+
+.contact__message {
+	width: 650px;
+	border: none;
+	border-radius: 3px;
+	margin-bottom: 16px;
+	font-size: 16px;
+	padding: 12px;
+}
+
+.contact__send-btn {
+	align-self: flex-start;
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    color: #94a8a9;
+    padding: 4px 15px;
+    border-radius: 3px;
+    border: none;
+    background: #6f6977;
+}
+
+.contact__send-btn:hover {
+    background: #55505d;
+}
+
+footer {
+	background: #778d8e;
+}
+
+.footer__social-icon {
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.footer-nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 25px;
+	list-style: none;
+}
+
+.footer-nav a {
+	padding: 0 8px;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.footer-nav a:hover {
+	text-decoration: underline;
+}
+
+.footer-nav__slash {
+	color: #6a7575;
+}
+
+.footer-copyright {
+	font-size: 14px;
+	padding-top: 20px;
+	color: #6a7575;
+}
+
+/* ============================================================================================== */
+
+.flex-container, .flex-container--centered {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-container--centered {
+	align-items: center;
+}
+
+.flex-container--columns {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.tri-container {
+	margin-top: 25px;
+}
+
+.tri-section {
+	width: 265px;
+	margin: 10px 20px;
+	text-align: center;
+}
+
+.bi-section {
+	margin: 10px 35px;
+}
+
+.uni-section {
+	max-width: 900px;
+}
+
+.section-title, .section-title--center {
+	font-family: 'Amatic SC', cursive;
+    font-size: 56px;
+    margin: 15px 0;
+}
+
+.section-title--center {
+	text-align: center;
+}
+
+.section-title--sm {
+	font-size: 34px;
+	margin-top: 30px;
+	color: #e0a6a5;
+}
+
+
+/* ========================================================================== Thank you page */
+
+
+.thank-you {
+	background: #3f3945;
+	background-image: url("../images/baby.jpg");
+	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100vh;
+	min-height: 550px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.thank-you__title {
+	font-family: 'Amatic SC', cursive;
+	font-size: 62px;
+	color: #e0a6a5;
+	margin: 20px 0 10px;
+	text-align: center;
+}
+
+.thank-you__sub-title {
+	font-family: 'Amatic SC', cursive;
+	font-size: 28px;
+	color: #fff;
+	margin: 20px 0;
+	text-align: center;
+}
+
+
+.thank-you__home-btn {
+	align-self: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    color: #3f3945;
+    padding: 4px 15px;
+    border-radius: 3px;
+    border: none;
+    background: #fff;
+    margin: 10px 0;
+}
+
+.thank-you__home-btn:hover {
+	background: #DDD;
+}
+
+/* ========================================================================== CSS ANNIMATIONS */
+
+/* ANNIMATE THE SCROLL DOWN ARROW */
+@-webkit-keyframes scroll_down {
+	0% {
+		-webkit-transform:translate(0, -10px) rotate(45deg);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform:translate(0, 10px) rotate(45deg);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes scroll_down {
+	0% {
+		-moz-transform:translate(0, -10px) rotate(45deg);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-moz-transform:translate(0, 10px) rotate(45deg);
+		opacity: 0;
+	}
+}
+
+@keyframes scroll_down {
+	0% {
+		transform:translate(0, -10px) rotate(45deg);
+		opacity: 0;
+	}
+	50% {	
+		opacity: 1;
+	}
+	100% {
+		transform:translate(0, 10px) rotate(45deg);
+		opacity: 0;
+	}
+}
+
+/* ========================================================================== Media Queries */
+
+@media (max-width: 1010px) {
+
+	header, .thank-you {
+		background-size: 1010px;
+		background-position-x: center;
+		background-attachment: scroll;
+	}
+}
+
+@media (max-width: 925px) {
+
+	.faq__section {
+		margin: 10px 25px;
+	}
+}
+
+@media (max-width: 800px) {
+
+	.tri-container {
+	    flex-direction: column;
+	    align-items: center;
+	}
+
+	.tri-section {
+		margin: 10px;
+		max-width: 350px;
+	}
+}
+
+@media (max-width: 775px) {
+
+	.header-nav {
+		font-size: 28px;
+	}
+
+	.header-nav a {
+		padding: 0 15px;
+	}
+}
+
+@media (max-width: 725px) {
+
+	.bi-container {
+	    flex-direction: column;
+	    align-items: center;
+	}
+
+	.bi-container .section-title {
+		text-align: center;
+	}
+
+	.bi-container .about__content {
+		text-align: center;
+	}
+
+	.faq__sections {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
+
+@media (max-width: 694px) {
+
+	.contact__form-container {
+		width: 100%;
+	}
+
+	.contact__name, .contact__email, .contact__message {
+		width: 90%;
+	}
+
+	.contact__send-btn {
+		align-self: center;
+	}
+}
+
+@media (max-width: 575px) {
+
+	header {
+		height: 100vh;
+	}
+
+	.header-nav {
+		display: none;
+	}
+
+	.header-logo {
+		margin: 0;
+		width: 90%;
+		height: auto;
+	}
+
+	.header-more {
+		margin-right: 0;
+		margin-bottom: 60px;
+	}
+
+	.intro, .about, .faq, .testimonials, .resources, .pricing, .contact {
+		padding: 50px 25px;
+	}
+
+	.header__scroll-down-contain {
+		visibility: visible;
+	}
+
+}
+
+@media (max-width: 525px) {
+	.thank-you__title {
+		font-size: 48px;
+	}
+
+	.thank-you__sub-title {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 475px) {
+
+	.testimonial-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.testimonial__image {
+		margin-right: 0;
+	}
+
+	.testimonial__text {
+		text-align: center;
+	}
+
+}
+
+@media (max-width: 450px) {
+
+	.intro, .about, .faq, .testimonials, .pricing, .contact {
+		padding: 50px 10px;
+	}
+
+}
