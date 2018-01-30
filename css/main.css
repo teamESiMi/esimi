@@ -13,8 +13,6 @@ body {
 }
 
 header {
-	background: transparent;
-	position: absolute;
 	height: 120px;
 	width: 100%;
 	display: flex;
@@ -28,7 +26,6 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	background: #00cf9c;
-	border-top: 1px solid #ebebeb;
 }
 
 ul {
@@ -50,12 +47,45 @@ button, input, textarea {
 	outline: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+}
+
+.header--landing {
+	background: transparent;
+	position: absolute;
+}
+
+.header--site {
+	background: #222;
+}
+
+.header--m, .header--m--landing {
+	background: #222;
+	height: 120px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	/* reveal in media queries */
+	display: none;
+}
+
+.header--m--landing {
+	background: rgba(0,0,0,0.1);
+	position: absolute;
+}
+
 .header-logo {
-	height: 55px;
 	margin: 0px 25px 0 75px;
 }
 
-.header-right {
+.header-logo-container:hover {
+	opacity: .75;
+}
+
+.header__links {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -76,10 +106,14 @@ button, input, textarea {
 	opacity: 0.5;
 	text-decoration: none;
 	cursor: pointer;
-	font-weight: 300;
+	font-weight: 200;
 }
 
 .header-nav a:hover {
+	opacity: 1;
+}
+
+.header-nav .header-nav--selected {
 	opacity: 1;
 }
 
@@ -115,36 +149,60 @@ button, input, textarea {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 540px;
+	height: 575px;
 
 	background: linear-gradient(180deg, #3e32b0, #5f25bf, #9c25bf);
 	background-size: 600% 600%;
 
-	-webkit-animation: AnimationName 10s ease infinite;
-	-moz-animation: AnimationName 10s ease infinite;
-	animation: AnimationName 10s ease infinite;
-}
-
-.hero__logo {
-	display: none;
+	-webkit-animation: AnimationName 8s ease infinite;
+	-moz-animation: AnimationName 8s ease infinite;
+	animation: AnimationName 8s ease infinite;
 }
 
 .hero__title {
 	color: #fff;
 	text-align: center;
-	font-size: 42px;
+	font-size: 40px;
     font-weight: 200;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .hero__sub-title {
 	color: #fff;
+	opacity: 0.6;
 	text-align: center;
 	font-size: 18px;
     font-weight: 200;
-    max-width: 650px;
+    max-width: 630px;
     line-height: 2;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+}
+
+.hero__cta-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero__cta {
+	font-size: 18px;
+	color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero__input-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.hero__input {
+	font-size: 14px;
+	font-weight: lighter;
+    padding: 12px 12px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    width: 220px;
 }
 
 .hero__button {
@@ -152,13 +210,67 @@ button, input, textarea {
 	font-weight: lighter;
     color: #fff;
     padding: 12px 32px;
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
     border: none;
     background: #00cf9c;
 }
 
 .hero__button:hover {
     background: #0ab389;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main__container {
+	max-width: 600px;
+	margin: 80px 15px 100px;
+}
+
+.faq--question {
+	font-weight: 500;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.team__container {
+	margin: 60px 0;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.team__member {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 30px 0;
+}
+
+.team__photo {
+	height: 150px;
+	border-radius: 50%;
+}
+
+.team__info {
+	display: flex;
+	flex-direction: column;
+	padding-left: 40px;
+}
+
+.team__name {
+	font-weight: 500;
+}
+
+.team__title {
+	color: #4fc899;
+}
+
+.team__desc {
+	margin-top: 10px;
 }
 
 .contact {
@@ -231,8 +343,48 @@ button, input, textarea {
     background: #0ab389;
 }
 
+.footer__cta-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #eee;
+	padding: 60px 0 70px;
+}
+
+.footer__cta {
+	font-size: 18px;
+	color: #666;
+    margin-bottom: 20px;
+}
+
+.footer__input-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.footer__input {
+	font-size: 14px;
+	font-weight: lighter;
+    padding: 12px 12px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    width: 220px;
+}
+
+.footer__button {
+	font-size: 14px;
+	font-weight: lighter;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background: #9C25C1;
+}
+
 .footer-logo {
-	height: 40px;
+	height: 22px;
+	margin: 10px 0;
 }
 
 .footer__social-icon {
@@ -251,9 +403,11 @@ button, input, textarea {
 
 .footer-nav a {
 	padding: 0 8px;
+	margin: 0 5px;
 	color: #fff;
 	text-decoration: none;
 	cursor: pointer;
+	font-weight: 200;
 }
 
 .footer-nav a:hover {
@@ -262,6 +416,23 @@ button, input, textarea {
 
 .footer-nav__slash {
 	color: #479476;
+}
+
+.footer__social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 25px 0 0;
+}
+
+.footer__icon {
+	height: 30px;
+	margin: 10px 11px;
+	opacity: 0.8;
+}
+
+.footer__icon:hover {
+	opacity: 1;
 }
 
 .footer-copyright {
@@ -327,7 +498,6 @@ button, input, textarea {
 
 .thank-you {
 	background: #3d386e;
-	background-image: url("../images/baby.jpg");
 	height: 100vh;
 	min-height: 550px;
 	width: 100%;
@@ -362,7 +532,6 @@ button, input, textarea {
     margin-bottom: 40px;
 }
 
-
 .thank-you__home-btn {
 	align-self: center;
 	font-size: 14px;
@@ -381,27 +550,33 @@ button, input, textarea {
 /* ========================================================================== Media Queries */
 
 
-@media (max-width: 735px) {
+@media (max-width: 775px) {
 
-	.header-right {
+	.header--landing {
 		display: none;
 	}
 
-	header {
-		justify-content: center;
-		height: 220px;
+	.header--site {
 		display: none;
+	}
+
+	.header--m, .header--m--landing {
+		display: flex;
+		justify-content: space-around;
+    	padding: 20px 0;
+	}
+
+	.header__links {
+		margin-right: 0;
 	}
 
 	.header-logo {
 		margin: 0;
-		height: 80px;
 	}
 
-	.hero__logo {
-		display: block;
-		height: 80px;
-		margin-bottom: 45px;
+	.header-logo--m {
+		margin-top: 8px;
+		height: 34px;
 	}
 
 	.hero__title {
@@ -414,6 +589,7 @@ button, input, textarea {
 	}
 
 }
+
 
 @media (max-width: 694px) {
 
@@ -449,6 +625,21 @@ button, input, textarea {
 	}
 }
 
+@media (max-width: 500px) {
+	.team__member {
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.team__info {
+		padding: 0 20px;
+	}
+
+	.team__photo {
+		margin-bottom: 10px;
+	}
+}
+
 
 @media (max-width: 450px) {
 
@@ -456,7 +647,27 @@ button, input, textarea {
 		padding: 50px 10px;
 	}
 
+	.hero__input-container {
+		flex-direction: column;
+	}
+
+	.hero__input {
+		padding: 12px 32px;
+	    border-radius: 5px;
+	    width: 300px;
+	    box-sizing: border-box;
+	    text-align: center;
+	}
+
+	.hero__button {
+		margin-top: 10px;
+	    border-radius: 5px;
+	    width: 300px;
+	}
+
+
 }
+
 
 /* ============================================================================================== ANNIMATIONS */
 
